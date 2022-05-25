@@ -1,38 +1,78 @@
-.App {
+.Mainbox {
+  max-width: 350px;
+  width: 80vw;
+  height: 90vh;
+  margin: 5vh auto;
+  padding: 5vh 0px;
+  border: 1px solid rgb(253, 188, 104);
+  box-sizing: border-box; 
+  border-radius: 5px;
+  background-color: antiquewhite;
+
+  display: flex;
+  justify-content: center;
+}
+
+.Gradebox {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin: 1rem 0px; 
+  width: 100%;
+}
+
+.Result {
+  width: 8rem; 
+  margin: 1rem auto; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  text-align: center; 
+  color: rgb(24, 182, 3); 
+  padding: 9px; 
+  font-size: 25px; 
+  font-weight: bold;
+}
+
+.ResetButton {
+  width: inherit; 
+  height: fit-content; 
+  background-color: rgb(24, 182, 3); 
+  border-radius: 6px; 
+  text-align: center; 
+  margin: 10px 0px 0px;
+}
+
+.CircleStyle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  background-color: #c5bba8;
+}
+
+.Ovalbox {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 1rem 0px; 
+  width: 100%;
+}
+
+.OvalStyle {
+  width: 20px;
+  height: 30px;
+  border-radius: 40%;
+  margin: 5px;
+  background-color: #c5bba8;
+}
+
+.SaveButton {
+  width: 150px;
+  height: 45px;
+  background-color: rgb(24, 182, 3); 
+  border-radius: 6px; 
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  
