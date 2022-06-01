@@ -5,17 +5,12 @@ import React from "react";
 import "./App.css";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addBucketFB } from "./redux/modules/bucket";
 const Word = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  //스토어에서 상태값 가져오기
-  const word_list = useSelector((state) => state.bucket.list);
-  // url 파라미터에서 인덱스 가져오기
-  const params = useParams();
-  const bucket_idx = params.idx;
+
   const word = React.useRef(null);
   const explain = React.useRef(null);
   const example = React.useRef(null);
@@ -26,7 +21,6 @@ const Word = (props) => {
         word: word.current.value,
         explain: explain.current.value,
         example: example.current.value,
-        // completed: false,
       })
     );
   };
