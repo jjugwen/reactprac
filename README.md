@@ -4,4 +4,4 @@
 master 브랜치에 저장
 
 숙련 주차 개인 과제
-master2 
+master2 브랜치에 
