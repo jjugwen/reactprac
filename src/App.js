@@ -1,9 +1,9 @@
-import { db } from "./firebase";
+// App.js
+
 import React from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
-// useDispatch는 데이터를 업데이트할 때, useSelector는 데이터를 가져올 때 사용.
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 // 액션생성함수 가져오기
 import { loadBucketFB } from "./redux/modules/bucket";
