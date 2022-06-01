@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.Myoutbox {
+  /* display: block; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: cadetblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.Header {
+  background-color: rgb(123, 125, 125);
+  height: 130px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+  padding-bottom: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 50px;
+  font-weight: 800;
+  color: aliceblue;
+}
+
+.Mybox {
+  /* width: 95%;
+  max-width: 400px; */
+  background: linear-gradient(rgb(123, 125, 125), cadetblue);
+  display: flex;
+  /* white-space: normal; */
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  padding-bottom: 40px;
+}
+
+.Inputbox {
+  width: 370px;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin: 5px 0px 5px 0px;
+  border-radius: 5px;
+}
+
+.buttons {
+  font-size: 1.5em;
+  width: 150px;
+  background-color: cadetblue;
+  border: 1px solid #464646;
+  box-shadow: 1px 1px 0px 1px #464646;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
