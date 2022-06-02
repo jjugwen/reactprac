@@ -77,15 +77,23 @@ export const updateBucketFB = (f) => {
       explain: f.explain,
       example: f.example,
     });
-    window.location.reload(); // 페이지 새로고침 기능 추가로, 수정하기 눌러서 메인페이지 오면 수정된 리스트 반영되게 함.
+    // window.location.reload(); // 페이지 새로고침 기능 추가로, 수정하기 눌러서 메인페이지 오면 수정된 리스트 반영되게 함.
     //getState()를 사용해서 스토어의 데이터 가져오기
     const _word_list = getState().bucket.list;
-    //findIndex로 몇 번째에 있는 지 찾기
-    const word_index = _word_list.findIndex((b) => {
-      // updateBucketFB의 파라미터로 넘겨받은 아이디와 아이디가 똑같은 요소는 몇 번째에 있는 지 찾기
-      return b.id === f.id;
+    //바뀐 데이터로 리스트 변경
+    const word_index = _word_list.map((b) => {
+      if (b.id === f.id) {
+        return {
+          id: f.id,
+          word: f.word,
+          explain: f.explain,
+          example: f.example,
+        };
+      } else {
+        return b;
+      }
     });
-
+    // console.log(word_index);
     dispatch(updateBucket(word_index));
   };
 };
@@ -120,19 +128,9 @@ export default function reducer(state = initialState, action = {}) {
     }
 
     case "bucket/UPDATE": {
-      const new_word_list = state.list.map((l, idx) => {
-        if (parseInt(action.bucket_idx) === idx) {
-          return {
-            ...l,
-            word: action.bucket_idx.word,
-            explain: action.bucket_idx.explain,
-            example: action.bucket_idx.example,
-          };
-        } else {
-          return l;
-        }
-      });
-      return { ...state, list: new_word_list };
+      // console.log(action.bucket_idx);
+      const new_word_list = [...action.bucket_idx];
+      return { list: new_word_list };
     }
 
     case "bucket/DELETE": {
