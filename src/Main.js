@@ -16,7 +16,6 @@ const Main = (props) => {
           {my_lists.map((list, idx) => {
             return (
               <Wordbox
-                // completed={list.completed}
                 key={idx}
                 onClick={() => {
                   history.push(`/edit/` + idx);

@@ -4,6 +4,7 @@ import React from "react";
 import "./App.css";
 import styled from "styled-components";
 import { useParams, useHistory } from "react-router-dom";
+// useDispatch는 데이터를 업데이트할 때, useSelector는 데이터를 가져올 때 사용.
 import { useDispatch, useSelector } from "react-redux";
 import { deleteBucketFB, updateBucketFB } from "./redux/modules/bucket";
 
@@ -28,14 +29,9 @@ const Edit = (props) => {
         word: word.current.value,
         explain: explain.current.value,
         example: example.current.value,
-        // completed: false,
       })
     );
   };
-  // const id = React.useRef(word_list[bucket_idx].id);
-  // const word = React.useRef(word_list[bucket_idx].word);
-  // const explain = React.useRef(word_list[bucket_idx].explain);
-  // const example = React.useRef(word_list[bucket_idx].example);
 
   return (
     <div>
@@ -51,8 +47,6 @@ const Edit = (props) => {
               className="Inputbox"
               style={{ height: "50px" }}
             />
-            {/* {word_list[bucket_idx].word} */}
-
             <div>설명</div>
             <textarea
               defaultValue={word_list[bucket_idx].explain}
