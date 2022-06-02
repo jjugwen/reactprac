@@ -39,7 +39,7 @@ export function deleteBucket(bucket_idx) {
   return { type: DELETE, bucket_idx };
 }
 
-//미들웨어s
+//미들웨어s - 파이어베이스랑 통신하는 부분
 export const loadBucketFB = () => {
   return async function (dispatch) {
     const word_data = await getDocs(collection(db, "word"));
@@ -60,13 +60,11 @@ export const addBucketFB = (word) => {
     const docRef = await addDoc(collection(db, "word"), word);
     const _bucket = await getDoc(docRef);
     const word_data = { id: _bucket.id, ..._bucket.data() };
-    // console.log(word_data);
 
     dispatch(createBucket(word_data));
   };
 };
 
-// 파이어베이스랑 통신하는 부분
 export const updateBucketFB = (f) => {
   return async function (dispatch, getState) {
     console.log(f);
@@ -79,10 +77,9 @@ export const updateBucketFB = (f) => {
       explain: f.explain,
       example: f.example,
     });
-
+    window.location.reload(); // 페이지 새로고침 기능 추가로, 수정하기 눌러서 메인페이지 오면 수정된 리스트 반영되게 함.
     //getState()를 사용해서 스토어의 데이터 가져오기
     const _word_list = getState().bucket.list;
-    console.log(_word_list);
     //findIndex로 몇 번째에 있는 지 찾기
     const word_index = _word_list.findIndex((b) => {
       // updateBucketFB의 파라미터로 넘겨받은 아이디와 아이디가 똑같은 요소는 몇 번째에 있는 지 찾기
@@ -127,7 +124,6 @@ export default function reducer(state = initialState, action = {}) {
         if (parseInt(action.bucket_idx) === idx) {
           return {
             ...l,
-            id: action.bucket_idx.id,
             word: action.bucket_idx.word,
             explain: action.bucket_idx.explain,
             example: action.bucket_idx.example,
@@ -136,7 +132,6 @@ export default function reducer(state = initialState, action = {}) {
           return l;
         }
       });
-      console.log({ list: new_word_list });
       return { ...state, list: new_word_list };
     }
 
