@@ -1,0 +1,104 @@
+/* App.css */
+.Header {
+  width: 100%;
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.InputBox {
+  width: 95%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 2% auto;
+}
+
+.AddBox {
+  width: 95%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin: 2% auto;
+}
+
+.sotitle {
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.Input {
+  height: 40px;
+  padding-left: 3%;
+}
+
+.Buttons {
+  background-color: #282c34;
+  color: white;
+  height: 40px;
+  margin-top: 7%;
+  border: none;
+}
+
+.selectImage {
+  display: flex;
+  flex-direction: row;
+}
+
+.selectPreview {
+  margin-top: 2%;
+  width: 95%;
+  max-width: 700px;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.selectPreview3 {
+  margin-top: 2%;
+  width: 95%;
+  max-width: 700px;
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.writingbox {
+  margin-top: 2%;
+  width: 95%;
+  max-width: 700px;
+  height: 200px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.detailBox {
+  width: 95%;
+  max-width: 700px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 3% auto;
+  border: 1px solid goldenrod;
+  background-size: cover;
+}
+
+.boardHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2%;
+}
