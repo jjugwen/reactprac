@@ -71,7 +71,7 @@ const Word = (props) => {
           <a
             style={{ color: "black" }}
             href="https://stdict.korean.go.kr/search/searchDetailWords.do"
-            target="_blank"
+            target="blank"
           >
             국립국어원 표준국어대사전 참고
           </a>

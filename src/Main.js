@@ -23,7 +23,9 @@ const Main = (props) => {
               >
                 <Title style={{ fontSize: "2em" }}>{list.word}</Title>
                 <Title style={{ fontSize: "1.1em" }}>{list.explain}</Title>
-                <Title style={{ color: "blue" }}>(예시) {list.example}</Title>
+                <Title style={{ color: "blue" }}>
+                  {list.example ? <>(예시) {list.example}</> : ""}
+                </Title>
               </Wordbox>
             );
           })}
